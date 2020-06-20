@@ -1,67 +1,259 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    font-family: 'Roboto', sans-serif;
-    color: #fff;
-    line-height: 1.6;
-}
-
-.slider {
-    position: relative;
-    overflow: hidden;
-    height: 100vh;
-    width: 100vw;
-}
-
-.slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.4s ease-in-out;
-}
-
-.slide.current {
-    opacity: 1;
-}
-
-.buttons button#next,
-button#prev {
-    display: none;
-}
-
-@media(max-width: 500px) {
-    .slide .content {
-        bottom: -18.75rem;
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    header {
+        margin: 0.5rem;
+        padding: 0.5rem;
+    }
+    
+    h2 {
+        text-align: center;
+    }
+    
+    body {
+        font-family: 'Roboto', sans-serif;
+        background: #333;
+        color: #fff;
+        line-height: 1.6;
+    }
+    /* slider section */
+    
+    .slider {
+        position: relative;
+        overflow: hidden;
+        height: 100vh;
+        width: 100vw;
+    }
+    
+    .slide {
+        position: absolute;
+        top: 0;
         left: 0;
         width: 100%;
+        height: 100%;
+        opacity: 0;
+        transition: opacity 0.4s ease-in-out;
     }
+    
+    .slide.current {
+        opacity: 1;
+    }
+    
+    .slide .content {
+        position: absolute;
+        bottom: 4.4rem;
+        left: -37.5rem;
+        opacity: 0;
+        width: 37.5rem;
+        background-color: rgba(255, 255, 255, 0.8);
+        color: #333;
+        padding: 1rem;
+    }
+    
+    .buttons button#next {
+        position: absolute;
+        top: 50%;
+        right: 1rem;
+        display: none;
+    }
+    
+    .buttons button#prev {
+        position: absolute;
+        top: 50%;
+        left: 1rem;
+        display: none;
+    }
+    
+    .buttons button {
+        border: 2px solid white;
+        background-color: transparent;
+        color: white;
+        cursor: pointer;
+        padding: .9rem 1rem;
+        border-radius: 50%;
+        outline: none;
+    }
+    
+    .slide .content h1 {
+        margin-bottom: 0.6rem;
+    }
+    
     .slide.current .content {
-        transform: translateY(-18.75rem);
+        opacity: 1;
+        transform: translateX(600px);
+        transition: all 0.7s ease-in-out 0.3s;
     }
-}
-
-
-/* Background Images */
-
-.slide:first-child {
-    background: url(/src/images/scotland.jpg) no-repeat center center/cover;
-}
-
-.slide:nth-child(2) {
-    background: url(/src/images/ni.jpg) no-repeat center top/cover;
-}
-
-.slide:nth-child(3) {
-    background: url(/src/images/wales.jpg) no-repeat center top/cover;
-}
-
-.slide:nth-child(4) {
-    background: url(/src/images/england.jpg) no-repeat center top/cover;
-}
+    
+    .buttons button:hover {
+        background-color: white;
+        color: #333;
+    }
+    /*  find a hike section*/
+    
+    .hike-heading {
+        padding-top: 1rem;
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 7rem;
+        background: #999999;
+    }
+    
+    h3 {
+        display: none;
+        width: 100%;
+        padding: .5rem;
+        font-size: 18px;
+        border-radius: 5px;
+    }
+    
+    form {
+        max-width: 500px;
+        margin: 2rem auto;
+        border: 2px solid black;
+        background: #777777;
+        padding: 2rem;
+        border-radius: 5px;
+    }
+    
+    label,
+    input,
+    select {
+        padding: 5px;
+    }
+    
+    label {
+        display: block;
+        padding: 1rem 0 .5rem;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+    
+    input {
+        display: block;
+        width: 93%;
+        border: 2px solid black;
+        padding: .5rem;
+        font-size: 18px;
+        border-radius: 5px;
+    }
+    
+    select {
+        display: block;
+        width: 97%;
+        border: 2px solid black;
+        padding: .5rem;
+        font-size: 18px;
+        border-radius: 5px;
+    }
+    
+    #sendBtn {
+        border: 2px solid black;
+        background: whitesmoke;
+        color: black;
+        padding: .5rem;
+        margin: 1rem 0;
+        width: auto;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+    /* Result */
+    
+    .row {
+        margin-bottom: 1rem;
+        color: black;
+    }
+    
+    .column {
+        width: 25%;
+        float: left;
+        padding: 0px 10px;
+    }
+    
+    .row::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        max-width: 300px;
+        margin: auto;
+        background-color: white;
+        text-align: center;
+        border-radius: 40px;
+        padding-bottom: 15px;
+    }
+    
+    .title {
+        color: gray;
+        font-size: 10px;
+    }
+    
+    button {
+        border: none;
+        padding: 8px;
+        display: inline-block;
+        color: white;
+        background-color: black;
+        cursor: pointer;
+        width: 70%;
+        border-radius: 20px;
+        font-size: 18px;
+        text-align: center;
+    }
+    
+    a {
+        text-decoration: none;
+        font-size: 22px;
+        color: black;
+    }
+    /* Footer */
+    
+    footer {
+        background: grey;
+        padding: 1rem
+    }
+    
+    h5 {
+        text-align: center;
+    }
+    
+    @media screen and (max-width: 500px) {
+        .slide .content {
+            bottom: -18.75rem;
+            left: 0;
+            width: 100%;
+        }
+        .slide.current .content {
+            transform: translateY(-18.75rem);
+        }
+    }
+    
+    @media screen and (max-width: 600px) {
+        .column {
+            display: block;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+    /* Background Images */
+    
+    .slide:first-child {
+        background: url(/src/images/scotland.jpg) no-repeat center center/cover;
+    }
+    
+    .slide:nth-child(2) {
+        background: url(/src/images/ni.jpg) no-repeat center top/cover;
+    }
+    
+    .slide:nth-child(3) {
+        background: url(/src/images/wales.jpg) no-repeat center top/cover;
+    }
+    
+    .slide:nth-child(4) {
+        background: url(/src/images/england.jpg) no-repeat center top/cover;
+    }
