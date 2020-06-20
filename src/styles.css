@@ -31,53 +31,9 @@ body {
     opacity: 1;
 }
 
-.slide .content {
-    position: absolute;
-    bottom: 4.4rem;
-    left: -37.5rem;
-    opacity: 0;
-    width: 37.5rem;
-    color: #333;
-    padding: 2.2rem;
-}
-
-.buttons button#next {
-    position: absolute;
-    top: 50%;
-    right: 1rem;
+.buttons button#next,
+button#prev {
     display: none;
-}
-
-.buttons button#prev {
-    position: absolute;
-    top: 50%;
-    left: 1rem;
-    display: none;
-}
-
-.buttons button {
-    border: 2px solid white;
-    background-color: transparent;
-    color: white;
-    cursor: pointer;
-    padding: .9rem 1rem;
-    border-radius: 50%;
-    outline: none;
-}
-
-.slide .content h1 {
-    margin-bottom: 0.6rem;
-}
-
-.slide.current .content {
-    opacity: 1;
-    transform: translateX(600px);
-    transition: all 0.7s ease-in-out 0.3s;
-}
-
-.buttons button:hover {
-    background-color: white;
-    color: #333;
 }
 
 @media(max-width: 500px) {

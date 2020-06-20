@@ -38,23 +38,6 @@ function prevSlide() {
     }
     setTimeout(() => current.classList.remove('current'));
 };
-
-// button events
-next.addEventListener('click', e => {
-    nextSlide();
-    if (auto === true) {
-        clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide, intervalTime);
-    }
-})
-
-prev.addEventListener('click', e => {
-    prevSlide();
-    clearInterval(slideInterval);
-    slideInterval = setInterval(nextSlide, intervalTime);
-
-})
-
 // auto slide
 if (auto === true) {
     // run next slide at interval time
