@@ -27,7 +27,7 @@ class Fetch {
 
 class UI {
     constructor() {
-        this.uiContainer = document.querySelector('.row')
+        this.uiContainer = document.querySelector('.card-section')
     }
     populateUI(data) {
         const ftch = new Fetch()
@@ -36,10 +36,78 @@ class UI {
         const myKey = "200804800-26d25f1775152845fd65fecad7ce8b07";
         let url = `https://www.hikingproject.com/data/get-trails?lat=${lat}&lon=${lng}&maxDistance=60&key=${myKey}`;
         ftch.getHikingData(url).then(newData => {
-                let hikingData = newData;
-                console.log(hikingData);
-                this.uiContainer.innerHTML = `
-                <div class="column">
+            let hikingData = newData;
+            console.log(hikingData);
+            this.uiContainer.innerHTML = `<div class="card">
+            <div class="card-image"><img class="hiking-image"src=${hikingData.trails[0].imgSmallMed}></div>
+            <div class="card-text">
+                <span class="date">Stars: ${hikingData.trails[0].stars}</span>
+                <h2>${hikingData.trails[0].name}</h2>
+                <p>${hikingData.trails[0].summary}</p>
+            </div>
+            <div class="card-stats">
+                <div class="stat">
+                    <div class="value">Length</div>
+                    <div class="type">${hikingData.trails[0].length}<sup>m</sup></div>
+                </div>
+                <div class="stat border">
+                    <div class="value">Difficulty</div>
+                    <div class="type">${hikingData.trails[0].difficulty}</div>
+                </div>
+                <div class="stat">
+                    <div class="value">Map</div>
+                    <div class="type"><a href="${hikingData.trails[0].url}">
+                </a>Link</div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image"><img class="hiking-image"src=${hikingData.trails[1].imgSmallMed}></div>
+            <div class="card-text">
+                <span class="date">Stars: ${hikingData.trails[1].stars}</span>
+                <h2>${hikingData.trails[1].name}</h2>
+                <p>${hikingData.trails[1].summary}</p>
+            </div>
+            <div class="card-stats">
+                <div class="stat">
+                    <div class="value">Length</div>
+                    <div class="type">${hikingData.trails[1].length}<sup>m</sup></div>
+                </div>
+                <div class="stat border">
+                    <div class="value">Difficulty</div>
+                    <div class="type">${hikingData.trails[1].difficulty}</div>
+                </div>
+                <div class="stat">
+                    <div class="value">Map</div>
+                    <div class="type"><a href="${hikingData.trails[1].url}">
+                </a>Link</div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-image"><img class="hiking-image"src=${hikingData.trails[2].imgSmallMed}></div>
+            <div class="card-text">
+                <span class="date">Stars: ${hikingData.trails[2].stars}</span>
+                <h2>${hikingData.trails[2].name}</h2>
+                <p>${hikingData.trails[2].summary}</p>
+            </div>
+            <div class="card-stats">
+                <div class="stat">
+                    <div class="value">Length</div>
+                    <div class="type">${hikingData.trails[2].length}<sup>m</sup></div>
+                </div>
+                <div class="stat border">
+                    <div class="value">Difficulty</div>
+                    <div class="type">${hikingData.trails[2].difficulty}</div>
+                </div>
+                <div class="stat">
+                    <div class="value">Map</div>
+                    <div class="type"><a href="${hikingData.trails[2].url}">
+                </a>Link</div>
+                </div>
+            </div>
+        </div>`
+                /* <div class="column">
             <div class="card">
             <img class="hiking-image" src=${hikingData.trails[0].imgSmall}></img>
             <h3>${hikingData.trails[0].name}</h3>
@@ -48,47 +116,12 @@ class UI {
             <a href="${hikingData.trails[0].url}">
             <i class="fas fa-tree"></i></a>
         </div>
-    </div>
-                ` //hikingData.trails[0].name
-            })
-            /*
-        this.uiContainer.innerHTML = ` <div class="column">
-        <div class="card">
-            <i class="fas fa-mountain"></i>
-            <h5>${data.results[0].formatted}</h5>
-            <p class="title"></p>
-            <p>Latitude: ${data.results[0].geometry.lat}</p>
-            <p>Longitude: ${data.results[0].geometry.lng}</p>
-            <i class="fas fa-tree"></i>
-        </div>
-    </div>
-    <div class="column">
-                <div class="card">
-                    <i class="fas fa-mountain"></i>
-                    <h5>Helvellyn</h5>
-                    <p class="title">Length: 18km</p>
-                    <p>Difficulty: Hard</p>
-                    <i class="fas fa-tree"></i>
-                </div>
-            </div>
-            <div class="column">
-                <div class="card">
-                    <i class="fas fa-mountain"></i>
-                    <h5>Ben Nevis</h5>
-                    <p class="title">Length: 9km</p>
-                    <p>Difficulty: Hard</p>
-                    <i class="fas fa-tree"></i>
-                </div>
-            </div>
-            <div class="column">
-                <div class="card">
-                    <i class="fas fa-mountain"></i>
-                    <h5>Marlborough Loop</h5>
-                    <p class="title">Length: 13km</p>
-                    <p>Difficulty: Medium</p>
-                    <i class="fas fa-tree"></i>
-                </div>
-            </div>`;*/
+    </div>*/
+
+
+        })
+
+
     }
 }
 // inst classes 

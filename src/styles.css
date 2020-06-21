@@ -5,8 +5,9 @@
     }
     
     header {
-        margin: 0.5rem;
-        padding: 0.5rem;
+        padding: 1rem;
+        background: #333;
+        color: white;
     }
     
     h2 {
@@ -164,59 +165,10 @@
     .hiking-image {
         width: 100%;
         height: 100%;
-        object-fit: cover;
         overflow: hidden;
-    }
-    
-    .row {
-        margin-bottom: 1rem;
-        color: black;
-    }
-    
-    .column {
-        width: 25%;
-        float: left;
-        padding: 0px 10px;
-    }
-    
-    .row::after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-    
-    .card {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        max-width: 300px;
-        margin: auto;
-        background-color: white;
-        text-align: center;
-        border-radius: 40px;
-        padding-bottom: 15px;
-    }
-    
-    .title {
-        color: gray;
-        font-size: 10px;
-    }
-    
-    button {
-        border: none;
-        padding: 8px;
-        display: inline-block;
-        color: white;
-        background-color: black;
-        cursor: pointer;
-        width: 70%;
-        border-radius: 20px;
-        font-size: 18px;
-        text-align: center;
-    }
-    
-    a {
-        text-decoration: none;
-        font-size: 22px;
-        color: black;
+        border-top-left-radius: 15px;
+        border-top-right-radius: 15px;
+        background-size: cover;
     }
     /* Card Section */
     
