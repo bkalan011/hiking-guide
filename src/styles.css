@@ -251,17 +251,17 @@
     /* Background Images */
     
     .slide:first-child {
-        background-image: url(/Users/bartkalanski/Desktop/coding-projects/JS/hiking-guide/src/images/scotland.jpg) no-repeat center center/cover;
+        background: url("/src/images/scotland.jpg") no-repeat center center/cover;
     }
     
     .slide:nth-child(2) {
-        background-image: url("https://drive.google.com/file/d/1jdBCozmfaTfO8a2i8lUtsurmxNEb34XG/view?usp=sharing") no-repeat center top/cover;
+        background: url("/src/images/ni.jpg") no-repeat center top/cover;
     }
     
     .slide:nth-child(3) {
-        background-image: url("/Users/bartkalanski/Desktop/coding-projects/JS/hiking-guide/src/images/wales.jpg") no-repeat center top/cover;
+        background: url("/src/images/wales.jpg") no-repeat center top/cover;
     }
     
     .slide:nth-child(4) {
-        background-image: url("https://www.flickr.com/photos/188994451@N03/50029163011/in/dateposted-public/") no-repeat center top/cover;
+        background: url("/src/images/england.jpg") no-repeat center top/cover;
     }
