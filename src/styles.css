@@ -255,11 +255,11 @@
     }
     
     .slide:nth-child(2) {
-        background: url(/Users/bartkalanski/Desktop/coding-projects/JS/hiking-guide/src/images/ni.jpg) no-repeat center top/cover;
+        background: url("https://drive.google.com/file/d/1jdBCozmfaTfO8a2i8lUtsurmxNEb34XG/view?usp=sharing") no-repeat center top/cover;
     }
     
     .slide:nth-child(3) {
-        background: url(/Users/bartkalanski/Desktop/coding-projects/JS/hiking-guide/src/images/wales.jpg) no-repeat center top/cover;
+        background: url("/Users/bartkalanski/Desktop/coding-projects/JS/hiking-guide/src/images/wales.jpg") no-repeat center top/cover;
     }
     
     .slide:nth-child(4) {
