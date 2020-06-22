@@ -146,3 +146,9 @@ button.addEventListener("click", () => {
         ui.populateUI(data);
     });
 })
+
+// reset button
+
+function myButton() {
+    location.reload()
+}
