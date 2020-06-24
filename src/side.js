@@ -29,7 +29,7 @@ class UI {
     constructor() {
         this.uiContainer = document.querySelector('.card-section')
     }
-    populateUI(data) {
+    populateUI(data, updateMinDistance, updateMaxDistance) {
 
         const ftch = new Fetch()
 
@@ -38,10 +38,11 @@ class UI {
 
         const myKey = "200804800-26d25f1775152845fd65fecad7ce8b07";
 
-        let url = `https://www.hikingproject.com/data/get-trails?lat=${lat}&lon=${lng}&maxDistance=90&sort=distance&key=${myKey}`;
+        let url = `https://www.hikingproject.com/data/get-trails?lat=${lat}&lon=${lng}&minLength=${updateMinDistance}&maxDistance=${updateMaxDistance}&sort=distance&key=${myKey}`;
 
         ftch.getHikingData(url).then(newData => {
             let hikingData = newData;
+
             let hikingPicture = hikingData.trails[0].imgSmallMed;
             let hikingPictureTwo = hikingData.trails[1].imgSmallMed;
             let hikingPictureThree = hikingData.trails[2].imgSmallMed;
@@ -97,7 +98,7 @@ class UI {
             </div>
         </div>
         <div class="card">
-            <div class="card-image"><img class="hiking-image"src=${hikingPicture}></div>
+            <div class="card-image"><img class="hiking-image"src=${hikingPictureThree}></div>
             <div class="card-text">
                 <span class="date">Stars: ${hikingData.trails[2].stars}</span>
                 <h2>${hikingData.trails[2].name}</h2>
@@ -119,8 +120,6 @@ class UI {
                 </div>
             </div>
         </div>`
-
-
         })
 
 
@@ -134,16 +133,20 @@ const ui = new UI();
 // add event listeners
 
 const search = document.querySelector('#location');
+const minDistance = document.querySelector('#min-distance')
+const maxDistance = document.querySelector('#max-distance')
 const button = document.querySelector('#sendBtn');
 
 // submit button
 
 button.addEventListener("click", () => {
     const currentVal = search.value;
+    const updateMinDistance = minDistance.value;
+    const updateMaxDistance = maxDistance.value
 
-    ft.getCurrent(currentVal).then((data) => {
+    ft.getCurrent(currentVal, updateMinDistance, updateMaxDistance).then((data) => {
         //call a UI method
-        ui.populateUI(data);
+        ui.populateUI(data, updateMinDistance, updateMaxDistance);
     });
 })
 
