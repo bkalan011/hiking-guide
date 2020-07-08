@@ -42,6 +42,9 @@ class UI {
 
         ftch.getHikingData(url).then(newData => {
             let hikingData = newData;
+            if (hikingData.trails.length < 3) {
+                window.alert('Sorry, there are not enough trails within specified range, please increase maximum distance from location :)')
+            }
 
             let hikingPicture = hikingData.trails[0].imgSmallMed;
             let hikingPictureTwo = hikingData.trails[1].imgSmallMed;
