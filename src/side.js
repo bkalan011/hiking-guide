@@ -54,6 +54,7 @@ class UI {
             hikingPictureThree === "" ? hikingPictureThree = "https://cdn2.apstatic.com/photos/hike/7016539_smallMed_1554827920.jpg" : hikingPictureThree;
 
             console.log(hikingData);
+            this.uiContainer.style.height = "100%";
             this.uiContainer.innerHTML = `<div class="card">
             <div class="card-image"><img class="hiking-image"src=${hikingPicture}></div>
             <div class="card-text">
