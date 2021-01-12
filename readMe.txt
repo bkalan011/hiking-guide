@@ -1,4 +1,17 @@
-1. Set up project with webpack 
-2. Created HTML layout 
-3. Created a vanilla JS image slider 
-4. Added basic styling using materialize css
+# Hiking Guide
+
+Hiking Guide is a web application which helps users to find trails near where they are based. As a keen hiker I had a lot of fun building this, it's Vanilla JS based and it was one of the last projects I built before I started to learn React. 
+
+**Technologies Used:**
+
+- JavaScript
+- HTML
+- CSS
+- Webpack
+- OpenCage Geocoding API
+- Hiking Project API
+
+
+Here is a link to the [live site](https://hiking-guide.netlify.app/).
+
+---
